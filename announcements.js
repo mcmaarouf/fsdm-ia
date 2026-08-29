@@ -28,10 +28,11 @@ async function loadAnnouncements() {
 
     // 2. رسم بطاقات الإعلانات باللغة الأصلية المكتوبة فـ الشيت
     container.innerHTML = data.map(item => {
-      const category = (item.category || 'INFO').toUpperCase().trim();
-      const date = item.date || '';
-      const title = item.title || '';
-      const desc = item.desc || '';
+      const category = (item.category || item.Category || 'INFO').toUpperCase().trim();
+      const date = item.date || item.Date || '';
+      const title = item.title || item.Title || '';
+      const desc = item.Content || item.content || item.desc || '';
+      const link = item.link || item.Link || '#';
 
       return `
         <div class="announcement-card category-${category}">
@@ -42,6 +43,7 @@ async function loadAnnouncements() {
           <div class="announcement-body">
             <strong style="color: #ffffff; font-size: 1rem; display: block; margin-bottom: 4px;">${title}</strong>
             <p style="margin: 0; color: #a0a0a0; font-size: 0.88rem; line-height: 1.5;">${desc}</p>
+            ${link !== '#' ? `<a href="${link}" target="_blank" style="display: inline-block; margin-top: 8px; color: #3498db; font-size: 0.85rem;">رابط الإعلان ↗</a>` : ''}
           </div>
         </div>
       `;
