@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FSDM AI Student — Command Center</title>
+<meta name="description" content="The unofficial dashboard for Applied Informatics & AI students at FSDM Fès — modules, live timetable, tools and announcements in one place.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+<header class="hud">
+  <div class="hud-inner">
+    <a href="index.html" class="hud-mark"><span class="dot"></span> FSDM_AI // STUDENT</a>
+    <nav class="hud-nav">
+      <a href="index.html">HOME</a>
+      <a href="modules.html">MODULES</a>
+      <a href="schedule.html">SCHEDULE</a>
+      <a href="announcements.html">ANNOUNCEMENTS</a>
+    </nav>
+    <div class="hud-clock"><strong id="hud-clock-time">--:--:--</strong><span class="sep">|</span>FÈS, MA</div>
+    <div class="lang-switcher" aria-label="Language"><button data-lang="ar">AR</button><button data-lang="fr">FR</button><button data-lang="en">ENG</button></div>
+    <button class="hud-burger" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+
+  <!-- الكود الجديد ديال Hero غيتحط مباشرة هنا -->
+  <section class="hero">
+    <span class="hero-tag"><span class="dot"></span> SYSTEM ONLINE — SEMESTER IN PROGRESS</span>
+    <h1 id="hero-main-title">موقع <span class="grad">الإعلاميات التطبيقية</span></h1>
+    <p class="lede" id="hero-subtitle">Le portail des étudiants d'Informatique Appliquée — FSDM. Modules & Actualités.</p>
+    
+    <div class="hero-actions">
+      <a href="schedule.html" class="btn btn-primary" id="btn-schedule">▸ View today's schedule</a>
+      <a href="modules.html" class="btn" id="btn-modules">Browse modules</a>
+    </div>
+
+    <div class="hero-readout">
+      <div>
+        <div class="val" id="live-year">2026/2027</div>
+        <div class="lab" id="lab-year">Academic year</div>
+      </div>
+      <div>
+        <div class="val">14</div>
+        <div class="lab" id="lab-modules">Available modules</div>
+      </div>
+      <div>
+        <div class="val" style="font-size: 20px;">S1 &amp; S2</div>
+        <div class="lab" id="lab-semesters">Active semesters</div>
+      </div>
+      <div>
+        <div class="val" style="font-size: 14px; color: var(--synapse);" id="lab-s3-soon">S3 coming soon</div>
+        <div class="lab" id="lab-status">Status</div>
+      </div>
+    </div>
+  </section>
+  <!-- نهاية الكود الجديد -->
+
+
+
+
+
+
+
+
+
+
+  <div class="deck-head">
+    <h2>Command deck</h2>
+    <span class="idx mono">4 ACTIVE MODULES</span>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="deck" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+
+    <!-- PANEL 01 -->
+    <a href="modules.html" class="panel deck-card tilt c-modules">
+      <span class="num mono">PANEL // 01</span>
+      <span class="icon-slot" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V6a2 2 0 0 1 2-2h13v13H6a2 2 0 0 0-2 2Zm0 0a2 2 0 0 0 2 2h13"/><path d="M8 8h9M8 12h9"/></svg>
+      </span>
+      <h3>Modules &amp; Resources</h3>
+      <span class="go">Open modules →</span>
+    </a>
+
+    <!-- PANEL 02 -->
+    <a href="schedule.html" class="panel deck-card tilt c-schedule">
+      <span class="num mono">PANEL // 02</span>
+      <span class="icon-slot" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      </span>
+      <h3>Live Schedule</h3>
+      <span class="go">Check timetable →</span>
+    </a>
+
+    <!-- PANEL 03 -->
+    <a href="modules.html#tools" class="panel deck-card tilt c-tools">
+      <span class="num mono">PANEL // 03</span>
+      <span class="icon-slot" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3.2"/></svg>
+      </span>
+      <h3>AI &amp; Dev Tools</h3>
+      <span class="go">See toolkit →</span>
+    </a>
+
+    <!-- PANEL 04 -->
+    <a href="announcements.html" class="panel deck-card tilt c-announce">
+      <span class="num mono">PANEL // 04</span>
+      <span class="icon-slot" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+      </span>
+      <h3>Announcements</h3>
+      <span class="go">Read announcements →</span>
+    </a>
+
+    <!-- PANEL 05 (عريضة شادة العرض كامل لتحت بـ grid-column: 1 / -1) -->
+      <a href="https://www.instagram.com/maarouf.space/" target="_blank" rel="noopener noreferrer" class="panel deck-card tilt wide-panel" style="grid-column: 1 / -1; display: flex; align-items: center; gap: 20px; text-decoration: none; color: inherit;">      <span class="num mono">PANEL // 05</span>
+      <span class="icon-slot" aria-hidden="true" style="display: flex; align-items: center; justify-content: center;">
+        <img src="LOGO.png" alt="Maarouf Space Logo" style="max-width: 24px; max-height: 24px; object-fit: contain;">
+      </span>
+      <div style="flex-grow: 1;">
+        <h3 id="p5-title">Maarouf Space</h3>
+        <p id="p5-desc" style="opacity: 0.6; font-family: monospace; font-size: 12px; margin: 4px 0 0;">External Link ↗</p>
+      </div>
+      <span class="go" id="p5-link">View History →</span>
+    </a>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="split">
+  <!-- 1. قسم المساهمة والتواصل -->
+  <div class="panel log-panel">
+    <h3><span class="mono" style="color:var(--signal); font-size:11px;">◆</span> <span id="log-title">CONTRIBUTE &amp; CONTACT</span></h3>
+    <div class="log-row">
+      <span id="contrib-desc">هل لديك تصحيحات امتحانات، أو ملاحظات أو نصوص أو مذكرات ترغب بمشاركتها؟ ساعد زملائك الطلاب من خلال المساهمة.</span>
+    </div>
+    <div class="log-row" style="margin-top: 15px;">
+    <a href="https://instagram.com/maarouf_space" target="_blank" rel="noopener noreferrer" class="contact-btn" id="contrib-btn">
+      Send via Maarouf Space ↗
+    </a>
+    </div>
+  </div>
+
+  <!-- 2. قسم المعلومات (الرابط داخل البانيل) -->
+  <div class="panel info-panel">
+    <h3><span class="mono" style="color:var(--synapse); font-size:11px;">◆</span> <span id="dept-title">INFO</span></h3>
+    
+    <div class="info-row">
+      <span id="lab-dept">Department</span>
+      <span id="val-dept">Computer Science</span>
+    </div>
+    
+    <div class="info-row">
+      <span id="lab-filiere">Program</span>
+      <span id="val-filiere">Applied Computer Science</span>
+    </div>
+    
+    <div class="info-row">
+      <span id="lab-faculty">Faculty</span>
+      <a href="https://www.fsdm.usmba.ac.ma/" target="_blank" rel="noopener noreferrer" class="site-link">
+        <span id="val-faculty">Faculty of Sciences Fès</span> ↗
+      </a>
+    </div>
+    
+    <div class="info-row">
+      <span id="lab-system">System</span>
+      <span id="val-system">Bachelor / Master / PhD (LMD)</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="fine">FSDM_AI // STUDENT — Plateforme étudiante indépendante, non affiliée à l'administration officielle de la faculté.</span>
+    <span class="fine">Fès, Morocco</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

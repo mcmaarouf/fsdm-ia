@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "date": "2026-08-30",
+    "category": "EXAM",
+    "title": "جدول امتحانات الدورة الخريفية",
+    "desc": "تم إعلان جدول الامتحانات الخاص بمسلك المعلوميات التطبيقية."
+  },
+  {
+    "id": 2,
+    "date": "2026-08-29",
+    "category": "TD",
+    "title": "Changement de salle de TP",
+    "desc": "La séance de TP de Programmation C est déplacée à la salle 4 ابتداءً من الأسبوع القادم."
+  },
+  {
+    "id": 3,
+    "date": "2026-08-28",
+    "category": "INFO",
+    "title": "CODE 212 Registration Open",
+    "desc": "Registration is open for all students to enhance digital skills."
+  }
+]

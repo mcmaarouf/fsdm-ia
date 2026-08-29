@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Announcements — FSDM AI Student</title>
+<meta name="description" content="Exam dates, deadlines and department notices for the Applied Informatics & AI program at FSDM.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+<header class="hud">
+  <div class="hud-inner">
+    <a href="index.html" class="hud-mark"><span class="dot"></span> FSDM_AI // STUDENT</a>
+    <nav class="hud-nav">
+      <a href="index.html">HOME</a>
+      <a href="modules.html">MODULES</a>
+      <a href="schedule.html">SCHEDULE</a>
+      <a href="announcements.html" class="active">ANNOUNCEMENTS</a>
+    </nav>
+    <div class="hud-clock"><strong id="hud-clock-time">--:--:--</strong><span class="sep">|</span>FÈS, MA</div>
+    <div class="lang-switcher" aria-label="Language"><button data-lang="ar">AR</button><button data-lang="fr">FR</button><button data-lang="en">ENG</button></div>
+    <button class="hud-burger" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <span class="eyebrow" id="feed-eyebrow">Signal feed</span>
+    <h1 id="announcements-title">Announcements</h1>
+    <p class="sub" id="announcements-sub">Exam dates, deadlines, and department notices.</p>
+  </div>
+
+  <!-- الحاوية الديناميكية التي يتم ملؤها عبر announcements.js -->
+  <div id="announcements-container"></div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="fine">FSDM_AI // STUDENT — Plateforme étudiante indépendante, non affiliée à l'administration officielle de la faculté.</span>
+    <span class="fine">Fès, Morocco</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="announcements.js"></script>
+</body>
+</html>

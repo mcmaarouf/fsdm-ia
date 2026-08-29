@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule — FSDM AI Student</title>
+<meta name="description" content="Live calendar and daily schedule for the Applied Informatics & AI program at FSDM.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+<header class="hud">
+  <div class="hud-inner">
+    <a href="index.html" class="hud-mark"><span class="dot"></span> FSDM_AI // STUDENT</a>
+    <nav class="hud-nav">
+      <a href="index.html" data-i18n="nav_home">HOME</a>
+      <a href="modules.html" data-i18n="nav_modules">MODULES</a>
+      <a href="schedule.html" data-i18n="nav_schedule">SCHEDULE</a>
+      <a href="announcements.html" data-i18n="nav_announcements">ANNOUNCEMENTS</a>
+    </nav>
+    <div class="hud-clock"><strong id="hud-clock-time">--:--:--</strong><span class="sep">|</span><span data-i18n="city">FÈS, MA</span></div>
+    <div class="lang-switcher" aria-label="Language">
+      <button data-lang="ar">AR</button>
+      <button data-lang="fr">FR</button>
+      <button data-lang="en">ENG</button>
+    </div>
+    <button class="hud-burger" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head" style="text-align: center;">
+    <span class="eyebrow mono" data-i18n="eyebrow">AGENDA // CALENDAR</span>
+    <div class="mono" id="hud-clock-time-main" style="font-size: 2.5rem; font-weight: 700; letter-spacing: 2px; margin-top: 10px;">--:--:--</div>
+    <p class="sub" id="live-date-sub" style="font-size: 1.2rem; margin-top: 5px;"></p>
+  </div>
+
+  <!-- التقويم (Calendar) مستخدم نفس الـ Classes والـ style.css الأصلي -->
+  <div class="timetable-wrap" style="max-width: 650px; margin: 30px auto; padding: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+      <button type="button" id="prev-month" class="slot" style="cursor: pointer; padding: 8px 16px;">⟨</button>
+      <h2 id="month-year-display" style="font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin: 0;"></h2>
+      <button type="button" id="next-month" class="slot" style="cursor: pointer; padding: 8px 16px;">⟩</button>
+    </div>
+    
+    <div id="cal-weekdays" style="display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; font-weight: 600; margin-bottom: 10px; font-size: 0.9rem; color: var(--text-muted);">
+      <!-- Days header generated via JS -->
+    </div>
+
+    <div id="calendar-days" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px;">
+      <!-- Days generated via JS -->
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="fine">FSDM_AI // STUDENT — Plateforme étudiante indépendante, non affiliée à l'administration officielle de la faculté.</span>
+    <span class="fine">Fès, Morocco</span>
+  </div>
+</footer>
+
+
+<script src="script.js"></script>
+<script>
+  // نظام الترجمة والتحكم في اللغات (AR / FR / ENG)
+  const translations = {
+    en: {
+      nav_home: "HOME", nav_modules: "MODULES", nav_schedule: "SCHEDULE", nav_announcements: "ANNOUNCEMENTS",
+      city: "FÈS, MA", footer_rights: "FSDM_AI // STUDENT — an independent student-built dashboard, not an official university system.",
+      footer_city: "Fès, Morocco", eyebrow: "AGENDA // CALENDAR",
+      weekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+      months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    },
+    fr: {
+      nav_home: "ACCUEIL", nav_modules: "MODULES", nav_schedule: "EMPLOI", nav_announcements: "ANNONCES",
+      city: "FÈS, MA", footer_rights: "FSDM_AI // STUDENT — tableau de bord indépendant créé par des étudiants.",
+      footer_city: "Fès, Maroc", eyebrow: "AGENDA // CALENDRIER",
+      weekdays: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+      months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+    },
+    ar: {
+      nav_home: "الرئيسية", nav_modules: "الوحدات", nav_schedule: "الجدول", nav_announcements: "الإعلانات",
+      city: "فاس، المغرب", footer_rights: "FSDM_AI // STUDENT — منصة طلابية مستقلة وليست نظاماً رسمياً للكلية.",
+      footer_city: "فاس، المغرب", eyebrow: "اليومية // التقويم",
+      weekdays: ["الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت", "الأحد"],
+      months: ["يناير", "فبراير", "مارس", "أبريل", "ماي", "يونيو", "يوليوز", "غشت", "شتنبر", "أكتوبر", "نونبر", "دجنبر"]
+    }
+  };
+
+  let currentLang = localStorage.getItem('fsdm_lang') || 'en';
+  let today = new Date();
+  let currentMonth = today.getMonth();
+  let currentYear = today.getFullYear();
+
+  function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('fsdm_lang', lang);
+    
+    document.documentElement.lang = lang === 'ar' ? 'ar' : (lang === 'fr' ? 'fr' : 'en');
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+
+    renderCalendar(currentMonth, currentYear);
+    updateClockAndDate();
+  }
+
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setLanguage(btn.getAttribute('data-lang'));
+    });
+  });
+
+  function updateClockAndDate() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString(currentLang === 'ar' ? 'ar-MA' : 'en-US', { hour12: false });
+    
+    document.querySelectorAll('#hud-clock-time, #hud-clock-time-main').forEach(el => {
+      if (el) el.textContent = timeString;
+    });
+    
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const localeMap = { ar: 'ar-MA', fr: 'fr-FR', en: 'en-US' };
+    const dateString = now.toLocaleDateString(localeMap[currentLang], options);
+    
+    const dateSub = document.getElementById('live-date-sub');
+    if (dateSub) dateSub.textContent = dateString;
+  }
+  
+  setInterval(updateClockAndDate, 1000);
+
+  function renderCalendar(month, year) {
+    const daysContainer = document.getElementById('calendar-days');
+    const weekdaysContainer = document.getElementById('cal-weekdays');
+    const monthYearDisplay = document.getElementById('month-year-display');
+    
+    daysContainer.innerHTML = '';
+    weekdaysContainer.innerHTML = '';
+
+    translations[currentLang].weekdays.forEach(dayName => {
+      const span = document.createElement('span');
+      span.textContent = dayName;
+      weekdaysContainer.appendChild(span);
+    });
+
+    monthYearDisplay.textContent = `${translations[currentLang].months[month]} ${year}`;
+
+    let firstDayIndex = (new Date(year, month, 1).getDay() + 6) % 7;
+    let totalDays = new Date(year, month + 1, 0).getDate();
+
+    for (let i = 0; i < firstDayIndex; i++) {
+      let emptyDiv = document.createElement('div');
+      emptyDiv.className = 'slot';
+      emptyDiv.style.background = 'transparent';
+      emptyDiv.style.border = 'none';
+      daysContainer.appendChild(emptyDiv);
+    }
+
+    for (let day = 1; day <= totalDays; day++) {
+      let dayDiv = document.createElement('div');
+      dayDiv.className = 'slot';
+      dayDiv.style.aspectRatio = '1';
+      dayDiv.style.display = 'flex';
+      dayDiv.style.alignItems = 'center';
+      dayDiv.style.justifyContent = 'center';
+      dayDiv.style.cursor = 'pointer';
+      dayDiv.textContent = day;
+
+      if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+        dayDiv.style.background = 'var(--accent, #6366f1)';
+        dayDiv.style.color = '#fff';
+        dayDiv.style.fontWeight = 'bold';
+      }
+
+      daysContainer.appendChild(dayDiv);
+    }
+  }
+
+  document.getElementById('prev-month').addEventListener('click', () => {
+    currentMonth--;
+    if (currentMonth < 0) { currentMonth = 11; currentYear--; }
+    renderCalendar(currentMonth, currentYear);
+  });
+
+  document.getElementById('next-month').addEventListener('click', () => {
+    currentMonth++;
+    if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+    renderCalendar(currentMonth, currentYear);
+  });
+
+  setLanguage(currentLang);
+</script>
+</body>
+</html>
