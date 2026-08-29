@@ -4,7 +4,6 @@
 // ==========================================
 
 const SHEET_ID = '1dpDjR7oCqcPQBw4VNGuCwWAGN8GsOiLicdbSawxLhmY';
-// اسم الصفحة فـ أسفل Google Sheets (إيلا كانت بالعربية غيّرها لـ 'الورقة1')
 const SHEET_NAME = 'Sheet1'; 
 
 async function loadAnnouncements() {
@@ -20,14 +19,13 @@ async function loadAnnouncements() {
 
     const data = await response.json();
 
-    // 1. حالة الجدول الخاوي
     if (!data || data.length === 0) {
       renderEmptyState(container);
       return;
     }
 
-    // 2. رسم بطاقات الإعلانات باللغة الأصلية المكتوبة فـ الشيت
     container.innerHTML = data.map(item => {
+      // قراءة الأعمدة مع دعم الحروف الكبيرة وصغيرة لضمان عدم ضياع أي بيانات
       const category = (item.category || item.Category || 'INFO').toUpperCase().trim();
       const date = item.date || item.Date || '';
       const title = item.title || item.Title || '';
@@ -35,15 +33,15 @@ async function loadAnnouncements() {
       const link = item.link || item.Link || '#';
 
       return `
-        <div class="announcement-card category-${category}">
-          <div class="announcement-header">
-            <span class="announcement-badge">${category}</span>
-            <span class="announcement-date">${date}</span>
+        <div class="announcement-card category-${category}" style="background: rgba(30, 41, 59, 0.7); border: 1px solid rgba(255, 255, 255, 0.1); padding: 16px; border-radius: 8px; margin-bottom: 12px;">
+          <div class="announcement-header" style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <span class="announcement-badge" style="background: #3b82f6; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">${category}</span>
+            <span class="announcement-date" style="color: #94a3b8; font-size: 0.85rem;">${date}</span>
           </div>
           <div class="announcement-body">
-            <strong style="color: #ffffff; font-size: 1rem; display: block; margin-bottom: 4px;">${title}</strong>
-            <p style="margin: 0; color: #a0a0a0; font-size: 0.88rem; line-height: 1.5;">${desc}</p>
-            ${link !== '#' ? `<a href="${link}" target="_blank" style="display: inline-block; margin-top: 8px; color: #3498db; font-size: 0.85rem;">رابط الإعلان ↗</a>` : ''}
+            <strong style="color: #ffffff; font-size: 1.05rem; display: block; margin-bottom: 6px;">${title}</strong>
+            <p style="margin: 0; color: #cbd5e1; font-size: 0.9rem; line-height: 1.5;">${desc}</p>
+            ${link !== '#' ? `<a href="${link}" target="_blank" style="display: inline-block; margin-top: 10px; color: #60a5fa; font-size: 0.85rem; text-decoration: none;">رابط الإعلان ↗</a>` : ''}
           </div>
         </div>
       `;
@@ -55,7 +53,6 @@ async function loadAnnouncements() {
   }
 }
 
-// دالة تفعيل كارت "لا توجد إعلانات"
 function renderEmptyState(container) {
   container.innerHTML = `
     <div class="empty-announcements panel">
@@ -67,5 +64,4 @@ function renderEmptyState(container) {
   `;
 }
 
-// تشغيل جلب الإعلانات فور تحميل الصفحة
 document.addEventListener('DOMContentLoaded', loadAnnouncements);
