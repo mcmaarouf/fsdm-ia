@@ -341,7 +341,7 @@ const LANG = {
     "ALL":"ALL","Semesters tracked":"Semesters tracked","Modules indexed":"Modules indexed",
     "Tool shortcuts":"Tool shortcuts","Academic year":"Academic year",
     "لا توجد إعلانات حالياً":"No announcements currently","لا توجد أي إعلانات جديدة في الوقت الحالي.":"There are no new announcements at the moment.",
-    "موقع الإعلاميات التطبيقية":"موقع الإعلاميات التطبيقية",
+    "موقع طلبة  الإعلاميات التطبيقية":"موقع  طلبة الإعلاميات التطبيقية",
     "hero_title": 'Applied <span class="grad">Informatics Portal</span>',
     "hero_subtitle": "The Applied Informatics Student Portal — FSDM. Modules & News.",
     "btn-schedule": "▸ View History",
