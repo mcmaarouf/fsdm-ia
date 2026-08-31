@@ -31,11 +31,12 @@
 
 <main class="wrap">
 
-
-  <!-- الكود الجديد ديال Hero غيتحط مباشرة هنا -->
+  <!-- Hero Section المصحح -->
   <section class="hero">
     <span class="hero-tag"><span class="dot"></span> SYSTEM ONLINE — SEMESTER IN PROGRESS</span>
-    <h1 id="hero-main-title">موقع طلبة   <span class="grad">الإعلاميات التطبيقية</span></h1>
+    <h1 id="hero-main-title">
+      موقع <span class="grad">طلبة الإعلاميات</span><br><span class="hero-bottom-line">التطبيقية</span>
+    </h1>
     <p class="lede" id="hero-subtitle">Le portail des étudiants d'Informatique Appliquée — FSDM. Modules & Actualités.</p>
     
     <div class="hero-actions">
@@ -62,34 +63,13 @@
       </div>
     </div>
   </section>
-  <!-- نهاية الكود الجديد -->
-
-
-
-
-
-
-
-
-
 
   <div class="deck-head">
     <h2>Command deck</h2>
     <span class="idx mono">4 ACTIVE MODULES</span>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-  <div class="deck" >
+  <div class="deck">
 
     <!-- PANEL 01 -->
     <a href="modules.html" class="panel deck-card tilt c-modules">
@@ -131,8 +111,9 @@
       <span class="go">Read announcements →</span>
     </a>
 
-    <!-- PANEL 05 (عريضة شادة العرض كامل لتحت بـ grid-column: 1 / -1) -->
-      <a href="https://www.instagram.com/maarouf.space/" target="_blank" rel="noopener noreferrer" class="panel deck-card tilt wide-panel" style="display: flex; align-items: center; gap: 20px; text-decoration: none; color: inherit;">      <span class="num mono">PANEL // 05</span>
+    <!-- PANEL 05 -->
+    <a href="https://www.instagram.com/maarouf.space/" target="_blank" rel="noopener noreferrer" class="panel deck-card tilt wide-panel" style="display: flex; align-items: center; gap: 20px; text-decoration: none; color: inherit;">
+      <span class="num mono">PANEL // 05</span>
       <span class="icon-slot" aria-hidden="true" style="display: flex; align-items: center; justify-content: center;">
         <img src="LOGO.png" alt="Maarouf Space Logo" style="max-width: 24px; max-height: 24px; object-fit: contain;">
       </span>
@@ -143,69 +124,49 @@
       <span class="go" id="p5-link">View History →</span>
     </a>
 
-</div>
-
-
-
-
-
-
-
-
-<div class="split">
-  <!-- 1. قسم المساهمة والتواصل -->
-  <div class="panel log-panel">
-    <h3><span class="mono" style="color:var(--signal); font-size:11px;">◆</span> <span id="log-title">CONTRIBUTE &amp; CONTACT</span></h3>
-    <div class="log-row">
-      <span id="contrib-desc">هل لديك تصحيحات امتحانات، أو ملاحظات أو نصوص أو مذكرات ترغب بمشاركتها؟ ساعد زملائك الطلاب من خلال المساهمة.</span>
-    </div>
-    <div class="log-row" style="margin-top: 15px;">
-    <a href="https://instagram.com/maarouf_space" target="_blank" rel="noopener noreferrer" class="contact-btn" id="contrib-btn">
-      Send via Maarouf Space ↗
-    </a>
-    </div>
   </div>
 
-  <!-- 2. قسم المعلومات (الرابط داخل البانيل) -->
-  <div class="panel info-panel">
-    <h3><span class="mono" style="color:var(--synapse); font-size:11px;">◆</span> <span id="dept-title">INFO</span></h3>
-    
-    <div class="info-row">
-      <span id="lab-dept">Department</span>
-      <span id="val-dept">Computer Science</span>
+  <div class="split">
+    <!-- 1. قسم المساهمة والتواصل -->
+    <div class="panel log-panel">
+      <h3><span class="mono" style="color:var(--signal); font-size:11px;">◆</span> <span id="log-title">CONTRIBUTE &amp; CONTACT</span></h3>
+      <div class="log-row">
+        <span id="contrib-desc">هل لديك تصحيحات امتحانات، أو ملاحظات أو نصوص أو مذكرات ترغب بمشاركتها؟ ساعد زملائك الطلاب من خلال المساهمة.</span>
+      </div>
+      <div class="log-row" style="margin-top: 15px;">
+        <a href="https://instagram.com/maarouf_space" target="_blank" rel="noopener noreferrer" class="contact-btn" id="contrib-btn">
+          Send via Maarouf Space ↗
+        </a>
+      </div>
     </div>
-    
-    <div class="info-row">
-      <span id="lab-filiere">Program</span>
-      <span id="val-filiere">Applied Computer Science</span>
-    </div>
-    
-    <div class="info-row">
-      <span id="lab-faculty">Faculty</span>
-      <a href="https://www.fsdm.usmba.ac.ma/" target="_blank" rel="noopener noreferrer" class="site-link">
-        <span id="val-faculty">Faculty of Sciences Fès</span> ↗
-      </a>
-    </div>
-    
-    <div class="info-row">
-      <span id="lab-system">System</span>
-      <span id="val-system">Bachelor / Master / PhD (LMD)</span>
+
+    <!-- 2. قسم المعلومات -->
+    <div class="panel info-panel">
+      <h3><span class="mono" style="color:var(--synapse); font-size:11px;">◆</span> <span id="dept-title">INFO</span></h3>
+      
+      <div class="info-row">
+        <span id="lab-dept">Department</span>
+        <span id="val-dept">Computer Science</span>
+      </div>
+      
+      <div class="info-row">
+        <span id="lab-filiere">Program</span>
+        <span id="val-filiere">Applied Computer Science</span>
+      </div>
+      
+      <div class="info-row">
+        <span id="lab-faculty">Faculty</span>
+        <a href="https://www.fsdm.usmba.ac.ma/" target="_blank" rel="noopener noreferrer" class="site-link">
+          <span id="val-faculty">Faculty of Sciences Fès</span> ↗
+        </a>
+      </div>
+      
+      <div class="info-row">
+        <span id="lab-system">System</span>
+        <span id="val-system">Bachelor / Master / PhD (LMD)</span>
+      </div>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </main>
 
