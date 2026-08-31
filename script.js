@@ -257,7 +257,6 @@ function initNeuralCanvas() {
   function step() {
     ctx.clearRect(0, 0, w, h);
 
-    // update
     for (const n of nodes) {
       n.x += n.vx;
       n.y += n.vy;
@@ -265,7 +264,6 @@ function initNeuralCanvas() {
       if (n.y < 0 || n.y > h) n.vy *= -1;
     }
 
-    // links between nodes
     ctx.lineWidth = 1;
     for (let i = 0; i < nodes.length; i++) {
       for (let j = i + 1; j < nodes.length; j++) {
@@ -281,7 +279,6 @@ function initNeuralCanvas() {
           ctx.stroke();
         }
       }
-      // link to mouse
       if (mouse.active) {
         const dx = nodes[i].x - mouse.x, dy = nodes[i].y - mouse.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
@@ -296,7 +293,6 @@ function initNeuralCanvas() {
       }
     }
 
-    // nodes
     for (const n of nodes) {
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
@@ -304,7 +300,6 @@ function initNeuralCanvas() {
       ctx.fill();
     }
 
-    // mouse glow node
     if (mouse.active) {
       const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 60);
       grad.addColorStop(0, 'rgba(255,167,38,0.35)');
@@ -330,7 +325,6 @@ function initNeuralCanvas() {
   requestAnimationFrame(step);
 }
 
-
 /* ---------- simple AR / FR / ENG switcher ---------- */
 const LANG = {
   en: {
@@ -341,7 +335,7 @@ const LANG = {
     "ALL":"ALL","Semesters tracked":"Semesters tracked","Modules indexed":"Modules indexed",
     "Tool shortcuts":"Tool shortcuts","Academic year":"Academic year",
     "لا توجد إعلانات حالياً":"No announcements currently","لا توجد أي إعلانات جديدة في الوقت الحالي.":"There are no new announcements at the moment.",
-    "موقع طلبة  الإعلاميات التطبيقية":"موقع  طلبة الإعلاميات التطبيقية",
+    "موقع طلبة الإعلاميات التطبيقية":"Applied Informatics Student Portal",
     "hero_title": 'Applied <span class="grad">Informatics Portal</span>',
     "hero_subtitle": "The Applied Informatics Student Portal — FSDM. Modules & News.",
     "btn-schedule": "▸ View History",
@@ -363,7 +357,7 @@ const LANG = {
     "ALL":"TOUT","Semesters tracked":"Semestres suivis","Modules indexed":"Modules indexés",
     "Tool shortcuts":"Raccourcis outils","Academic year":"Année universitaire",
     "لا توجد إعلانات حالياً":"Aucune annonce actuellement","لا توجد أي إعلانات جديدة في الوقت الحالي.":"Aucune nouvelle annonce pour le moment.",
-    "موقع الإعلاميات التطبيقية":"موقع الإعلاميات التطبيقية",
+    "موقع طلبة الإعلاميات التطبيقية":"Portail des étudiants d'Informatique Appliquée",
     "hero_title": 'Portail des <span class="grad">Études Informatiques</span>',
     "hero_subtitle": "Le portail des étudiants d'Informatique Appliquée — FSDM. Modules & Actualités.",
     "btn-schedule": "▸ Consulter l'historique",
@@ -384,8 +378,8 @@ const LANG = {
     "WEEKLY TIMETABLE":"الجدول اليومي","DAILY SCHEDULE":"الجدول اليومي",
     "ALL":"الكل","Semesters tracked":"الفصول الدراسية","Modules indexed":"الوحدات",
     "Tool shortcuts":"اختصارات الأدوات","Academic year":"السنة الجامعية",
-    "موقع الإعلاميات التطبيقية":"موقع الإعلاميات التطبيقية",
-    "hero_title": 'موقع <span class="grad">الإعلاميات التطبيقية</span>',
+    "موقع طلبة الإعلاميات التطبيقية":"موقع طلبة الإعلاميات التطبيقية",
+    "hero_title": 'موقع <span class="grad">طلبة الإعلاميات التطبيقية</span>',
     "hero_subtitle": "بوابة طلبة الإعلاميات التطبيقية — FSDM. الوحدات والإعلانات.",
     "btn-schedule": "▸ عرض التاريخ",
     "btn-modules": "تصفح الوحدات",
@@ -395,42 +389,43 @@ const LANG = {
     "lab-s3-soon": "سيضاف S3 قريباً",
     "lab-status": "الحالة",
     "p5-title": "Maarouf Space",
-    "p5-desc": "  ↗",
+    "p5-desc": "↗",
     "p5-link": "زيارة الفضاء ←"
   }
 };
 
 function applyLanguage(lang){
   if(!LANG[lang]) return;
-  localStorage.setItem('fsdm-language',lang);
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  window.currentLang = lang;
+  localStorage.setItem('fsdm-language', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
 
-  const all=Object.keys(LANG.en);
-  const nodes=[];
-  const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+  const all = Object.keys(LANG.en);
+  const nodes = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   while(walker.nextNode()) nodes.push(walker.currentNode);
 
-  // Restore English before applying another language.
-  nodes.forEach(node=>{
-    const value=node.nodeValue.trim();
+  // Restore English base text before applying target translation
+  nodes.forEach(node => {
+    const value = node.nodeValue.trim();
     if(!value) return;
     for(const key of all){
-      if(value===LANG.fr[key] || value===LANG.ar[key] || value===LANG.en[key]){
-        node.nodeValue=node.nodeValue.replace(value,LANG.en[key]);
+      if(value === LANG.fr[key] || value === LANG.ar[key] || value === LANG.en[key]){
+        node.nodeValue = node.nodeValue.replace(value, LANG.en[key]);
         break;
       }
     }
   });
 
-  nodes.forEach(node=>{
-    const value=node.nodeValue.trim();
+  nodes.forEach(node => {
+    const value = node.nodeValue.trim();
     if(!value) return;
-    const translated=LANG[lang][value];
-    if(translated) node.nodeValue=node.nodeValue.replace(value,translated);
+    const translated = LANG[lang][value];
+    if(translated) node.nodeValue = node.nodeValue.replace(value, translated);
   });
 
-  // تحديث العنوان الرئيسي والشرح ديناميكياً
+  // Dynamic hero title & subtitle updates
   const titleEl = document.getElementById('hero-main-title');
   if (titleEl && LANG[lang] && LANG[lang]["hero_title"]) {
       titleEl.innerHTML = LANG[lang]["hero_title"];
@@ -441,7 +436,7 @@ function applyLanguage(lang){
       subtitleEl.textContent = LANG[lang]["hero_subtitle"];
   }
 
-  // تحديث الأزرار والبطاقات عبر الـ IDs (تزادو ديال البطاقة الخامسة)
+  // ID-based elements translation
   const elementsToTranslate = {
       'btn-schedule': 'btn-schedule',
       'btn-modules': 'btn-modules',
@@ -462,16 +457,16 @@ function applyLanguage(lang){
       }
   }
 
-  document.querySelectorAll('.lang-switcher button').forEach(btn=>{
-    btn.classList.toggle('active',btn.dataset.lang===lang);
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 
-  if(typeof window.__scheduleRender==='function') window.__scheduleRender();
+  if(typeof window.__scheduleRender === 'function') window.__scheduleRender();
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
-  document.querySelectorAll('.lang-switcher button').forEach(btn=>{
-    btn.addEventListener('click',()=>applyLanguage(btn.dataset.lang));
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lang-switcher button').forEach(btn => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
   });
-  applyLanguage(localStorage.getItem('fsdm-language')||'en');
+  applyLanguage(localStorage.getItem('fsdm-language') || 'en');
 });
