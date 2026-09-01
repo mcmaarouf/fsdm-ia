@@ -1,33 +1,246 @@
-ص<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modules & Resources — FSDM AI Student</title>
-<meta name="description" content="Course modules for the Applied Informatics & AI program at FSDM, organized by semester, with resources and tool shortcuts.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modules — FSDM AI Student</title>
+  <meta name="description"
+    content="Google Drive notes and YouTube playlists for every module of the Applied Informatics & AI program at FSDM, organized by semester.">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<canvas id="neural-canvas" aria-hidden="true"></canvas>
 
-<header class="hud">
-  <div class="hud-inner">
-    <a href="index.html" class="hud-mark"><span class="dot"></span> FSDM_AI // STUDENT</a>
-    <nav class="hud-nav">
-      <a href="index.html">HOME</a>
-      <a href="modules.html">MODULES</a>
-      <a href="schedule.html">SCHEDULE</a>
-      <a href="announcements.html">ANNOUNCEMENTS</a>
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <header class="hud">
+    <div class="hud-inner">
+      <a href="index.html" class="hud-mark"><span class="dot"></span> FSDM_AI // STUDENT</a>
+      <nav class="hud-nav">
+        <a href="index.html">HOME</a>
+        <a href="modules.html" class="active">MODULES</a>
+        <a href="schedule.html">SCHEDULE</a>
+        <a href="announcements.html">ANNOUNCEMENTS</a>
+      </nav>
+      <div class="hud-clock"><strong id="hud-clock-time">--:--:--</strong><span class="sep">|</span>FÈS, MA</div>
+      <div class="lang-switcher" aria-label="Language"><button data-lang="ar">AR</button><button
+          data-lang="fr">FR</button><button data-lang="en">ENG</button></div>
+      <button class="hud-burger" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <div class="page-head">
+      <span class="eyebrow mono">Course index</span>
+      <h1>Modules </h1>
+      <p class="sub">Google Drive notes and YouTube playlists for every module, organized by semester.</p>
+    </div>
+
+    <nav class="filter-row" aria-label="Jump to semester">
+      <a href="#s1" class="filter-btn active">S1</a>
+      <a href="#s2" class="filter-btn">S2</a>
+      <a href="#s3" class="filter-btn">S3</a>
+      <a href="#s4" class="filter-btn">S4</a>
     </nav>
-    <div class="hud-clock"><strong id="hud-clock-time">--:--:--</strong><span class="sep">|</span>FÈS, MA</div>
-    <div class="lang-switcher" aria-label="Language"><button data-lang="ar">AR</button><button data-lang="fr">FR</button><button data-lang="en">ENG</button></div>
-    <button class="hud-burger" aria-label="Toggle menu">☰</button>
-  </div>
-</header>
+
+
+
+
+    <!-- SEMESTER 1 -->
+    <section id="s1">
+      <div class="section-title">
+        <h2>Semester 1</h2>
+        <span class="idx mono">7 MODULES</span>
+      </div>
+
+      <div class="semester-panel">
+        <div class="module-grid">
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-brands fa-python"></i></span>
+            <h3>Python 1</h3>
+            <div class="module-foot">
+              <a href="https://drive.google.com/drive/folders/106yGe9UcJin1P6ap6y0ihrukZhG4LJdk?usp=sharing" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="https://www.youtube.com/watch?v=YFfWOZkJ8i0&list=PLZpzLuUp9qXwerbFOLoUpLQFBs2sT3SYW&index=1" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+
+
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+            <h3>Algo &amp; C1</h3>
+            <div class="module-foot">
+              <a href="https://drive.google.com/drive/folders/1-yyKBBl98v9rbvlPeIdzpKnhEEtPeOvx?usp=drive_link" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="https://www.youtube.com/watch?v=I4U0sQDw5Nw&list=PLZpzLuUp9qXxKSkKT43ppqzb8c2ahO4VS" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-calculator"></i></span>
+            <h3>Algèbre 1</h3>
+            <div class="module-foot">
+              <a href="https://drive.google.com/drive/folders/1-v7Op0DWF56oPHEZ-eRPwN662hb7DRmd?usp=sharing" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+            <h3>Analyse 1</h3>
+            <div class="module-foot">
+              <a href="https://drive.google.com/drive/folders/1023gDzWG_tRZTa18eM9erRsdh8bMkg8u?usp=sharing" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-desktop"></i></span>
+            <h3>Architecture des ordinateurs</h3>
+            <div class="module-foot">
+              <a href="https://drive.google.com/drive/folders/10_rP4ZlDzrSnCZfkDoL3yKdnT5g47ifq?usp=sharing" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+             
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span>
+            <h3>Electronique numérique</h3>
+            <div class="module-foot">
+              <a href="https://drive.google.com/drive/folders/1-zqJ1Ueve7x-Nph3IH1KJYbn7-1mgjf0?usp=sharing" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="https://www.youtube.com/watch?v=n5mmJLR6dBk&list=PLU7IbxWzSiXQotZw50OdTTtMOjG5F-Fxh" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+            <h3>Méthodologie de travail universitaire</h3>
+            <div class="module-foot">
+              <a href="https://drive.google.com/drive/folders/100CghBA4WSU_rD6ZeS4BKOB5dM031gBN?usp=sharing" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- SEMESTER 2 -->
+    <section id="s2">
+      <div class="section-title">
+        <h2>Semester 2</h2>
+        <span class="idx mono">7 MODULES</span>
+      </div>
+
+      <div class="semester-panel">
+
+        <div class="module-grid">
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-brands fa-python"></i></span>
+            <h3>Python 2</h3>
+            <div class="module-foot">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+            <h3>Algo2 &amp; C2</h3>
+            <div class="module-foot">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+            <h3>Programmation web 1</h3>
+            <div class="module-foot">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-wave-square"></i></span>
+            <h3>Traitement du signal</h3>
+            <div class="module-foot">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-calculator"></i></span>
+            <h3>Algèbre 2</h3>
+            <div class="module-foot">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
+            <h3>Analyse 2</h3>
+            <div class="module-foot">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+          <div class="panel module-card">
+            <span class="icon-slot" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></span>
+            <h3>Culture digitale</h3>
+            <div class="module-foot">
+              <a href="#" target="_blank" rel="noopener noreferrer" class="drive-link"><i
+                  class="fa-brands fa-google-drive"></i> Drive</a>
+              <a href="#" target="_blank" rel="noopener noreferrer" class="youtube-link"><i
+                  class="fa-brands fa-youtube"></i> YouTube</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
 
 
@@ -49,433 +262,70 @@
 
 
 
+    <!-- SEMESTER 3 (not started yet) -->
+    <section id="s3">
+      <div class="section-title">
+        <h2>Semester 3</h2>
+        <span class="idx mono">0 MODULES</span>
+      </div>
+      <div class="panel empty-announcements">
+        <div class="empty-icon">◌</div>
+        <h2>Coming soon</h2>
+        <p>S3 modules will be added once the semester starts.</p>
+        <span class="mono">S3 // PENDING</span>
+      </div>
+    </section>
 
+    <!-- SEMESTER 4 (not started yet) -->
+    <section id="s4">
+      <div class="section-title">
+        <h2>Semester 4</h2>
+        <span class="idx mono">0 MODULES</span>
+      </div>
+      <div class="panel empty-announcements">
+        <div class="empty-icon">◌</div>
+        <h2>Coming soon</h2>
+        <p>S4 modules will be added once the semester starts.</p>
+        <span class="mono">S4 // PENDING</span>
+      </div>
+    </section>
 
+  </main>
 
-
-
-
-
-
-
-
-<!-- ==================== قسم بطاقة الموديولات القادمة ==================== -->
-
-<!-- 1. الـ CSS (أنيميشن الحركة والتوهج) -->
-<style>
-  .modules-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .module-card.coming-soon {
-    background: rgba(22, 27, 34, 0.6);
-    border: 1px dashed rgba(139, 123, 255, 0.4);
-    border-radius: 12px;
-    padding: 24px;
-    position: relative;
-    overflow: hidden;
-    backdrop-filter: blur(10px);
-    /* أنيميشن الطفو ونبض الإضاءة */
-    animation: pulseGlow 3s infinite ease-in-out, floatCard 4s infinite ease-in-out;
-    transition: all 0.3s ease;
-  }
-
-  .module-card.coming-soon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(160, 225, 255, 0.12),
-      transparent
-    );
-    transform: skewX(-25deg);
-    animation: shineSweep 4s infinite ease-in-out;
-  }
-
-  .module-card.coming-soon .mono-dot {
-    display: inline-block;
-    color: var(--signal, #00f2fe);
-    font-size: 11px;
-    animation: blinkIcon 1.5s infinite ease-in-out;
-  }
-
-  .badge-status {
-    font-family: monospace;
-    font-size: 0.75rem;
-    padding: 3px 8px;
-    background: rgba(139, 123, 255, 0.15);
-    color: #a0e1ff;
-    border-radius: 4px;
-    border: 1px solid rgba(139, 123, 255, 0.3);
-  }
-
-  /* --- Keyframe Animations --- */
-  @keyframes pulseGlow {
-    0%, 100% {
-      border-color: rgba(139, 123, 255, 0.3);
-      box-shadow: 0 0 10px rgba(139, 123, 255, 0.05);
-    }
-    50% {
-      border-color: rgba(160, 225, 255, 0.7);
-      box-shadow: 0 0 25px rgba(139, 123, 255, 0.25);
-    }
-  }
-
-  @keyframes floatCard {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
-  }
-
-  @keyframes shineSweep {
-    0% { left: -100%; }
-    20%, 100% { left: 200%; }
-  }
-
-  @keyframes blinkIcon {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(1.3); }
-  }
-</style>
-
-<!-- 2. الـ HTML (بنية الكارت) -->
-<div class="modules-container">
-  <div class="module-card coming-soon">
-    <div class="module-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-      <span class="mono-dot">◆</span>
-      <span class="badge-status" id="lab-s3-soon">S3 / S4</span>
+  <footer>
+    <div class="wrap">
+      <span class="fine">FSDM_AI // STUDENT — Plateforme étudiante indépendante, non affiliée à l'administration
+        officielle de la faculté.</span>
+      <span class="fine">Fès, Morocco</span>
     </div>
-    <div class="module-body">
-      <h4 id="soon-title" style="margin: 0 0 8px 0; color: #ffffff; font-size: 1.1rem;">Modules en cours de préparation</h4>
-      <p id="soon-desc" style="margin: 0; color: #8b949e; font-size: 0.88rem; line-height: 1.5;">المحتوى قيد الإعداد وسيتم إطلاقه قريباً لتغطية باقي الفصول الدراسية.</p>
-    </div>
-  </div>
-</div>
+  </footer>
 
-<!-- 3. الـ JS (ربط التراجم أوتوماتيكياً مع كائن LANG) -->
-<script>
-  (function() {
-    if (typeof LANG !== 'undefined') {
-      // إدراج التراجم لـ EN
-      if (LANG.en) {
-        LANG.en["soon-title"] = "Modules Coming Soon";
-        LANG.en["soon-desc"] = "Content is under preparation and will be launched soon to cover upcoming semesters.";
-        LANG.en["lab-s3-soon"] = "S3 / S4";
+  <script src="script.js"></script>
+  <script>
+    // إبراز الزر النشط في شريط التنقل بين السداسيات أثناء التمرير أو الضغط
+    (function () {
+      const tabs = Array.from(document.querySelectorAll('.filter-row .filter-btn'));
+      const sections = tabs
+        .map(t => document.getElementById(t.getAttribute('href').slice(1)))
+        .filter(Boolean);
+
+      function setActive(id) {
+        tabs.forEach(t => t.classList.toggle('active', t.getAttribute('href') === `#${id}`));
       }
-      // إدراج التراجم لـ FR
-      if (LANG.fr) {
-        LANG.fr["soon-title"] = "Modules Bientôt Disponibles";
-        LANG.fr["soon-desc"] = "Le contenu est en cours de préparation et sera lancé prochainement.";
-        LANG.fr["lab-s3-soon"] = "S3 / S4";
-      }
-      // إدراج التراجم لـ AR
-      if (LANG.ar) {
-        LANG.ar["soon-title"] = "ستنطلق قريباً";
-        LANG.ar["soon-desc"] = "المحتوى قيد الإعداد وسيتم إطلاقه قريباً لتغطية باقي الفصول الدراسية.";
-        LANG.ar["lab-s3-soon"] = "S3 / S4";
-      }
-    }
-  })();
-</script>                               
 
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => setActive(tab.getAttribute('href').slice(1)));
+      });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <main class="wrap">
-
-  <div class="page-head">
-    <span class="eyebrow">Course index</span>
-    <h1>Modules &amp; Resources</h1>
-    <p class="sub">Every course unit in the Applied Informatics &amp; AI track, from first-year fundamentals to final-year specialization. Filter by semester to find slides, TDs and past exams fast.</p>
-  </div>
-
-  <div class="filter-row" data-filter-group=".module-card">
-    <button class="filter-btn active" data-filter="all">ALL</button>
-    <button class="filter-btn" data-filter="s3">SEMESTRE 3</button>
-    <button class="filter-btn" data-filter="s4">SEMESTRE 4</button>
-    <button class="filter-btn" data-filter="s5">SEMESTRE 5</button>
-    <button class="filter-btn" data-filter="s6">SEMESTRE 6</button>
-  </div>
-
-  <div class="module-grid">
-
-    <article class="panel module-card tilt" data-filter-tags="s3">
-      <div class="module-top">
-        <span class="module-code mono">INF301</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Algorithms &amp; Data Structures II</h3>
-      <div class="module-meta"><span class="chip">S3</span><span class="chip violet">5 ECTS</span></div>
-      <div class="module-bar"><span style="width:70%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s3">
-      <div class="module-top">
-        <span class="module-code mono">MAT304</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Linear Algebra &amp; Probability</h3>
-      <div class="module-meta"><span class="chip">S3</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:85%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s3">
-      <div class="module-top">
-        <span class="module-code mono">SYS302</span>
-        <span class="chip">CM+TP</span>
-      </div>
-      <h3>Operating Systems Fundamentals</h3>
-      <div class="module-meta"><span class="chip">S3</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:60%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s3">
-      <div class="module-top">
-        <span class="module-code mono">LNG303</span>
-        <span class="chip">TD</span>
-      </div>
-      <h3>Scientific English &amp; Communication</h3>
-      <div class="module-meta"><span class="chip">S3</span><span class="chip violet">2 ECTS</span></div>
-      <div class="module-bar"><span style="width:90%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s4">
-      <div class="module-top">
-        <span class="module-code mono">BDD401</span>
-        <span class="chip">CM+TP</span>
-      </div>
-      <h3>Databases &amp; SQL</h3>
-      <div class="module-meta"><span class="chip">S4</span><span class="chip violet">5 ECTS</span></div>
-      <div class="module-bar"><span style="width:55%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s4">
-      <div class="module-top">
-        <span class="module-code mono">RES402</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Computer Networks</h3>
-      <div class="module-meta"><span class="chip">S4</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:48%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s4">
-      <div class="module-top">
-        <span class="module-code mono">STA403</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Statistics for Data Science</h3>
-      <div class="module-meta"><span class="chip">S4</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:62%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s4">
-      <div class="module-top">
-        <span class="module-code mono">WEB404</span>
-        <span class="chip">TP</span>
-      </div>
-      <h3>Web Development Fundamentals</h3>
-      <div class="module-meta"><span class="chip">S4</span><span class="chip violet">3 ECTS</span></div>
-      <div class="module-bar"><span style="width:75%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s5">
-      <div class="module-top">
-        <span class="module-code mono">IA501</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Introduction to Artificial Intelligence</h3>
-      <div class="module-meta"><span class="chip">S5</span><span class="chip violet">5 ECTS</span></div>
-      <div class="module-bar"><span style="width:40%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s5">
-      <div class="module-top">
-        <span class="module-code mono">ML502</span>
-        <span class="chip">CM+TP</span>
-      </div>
-      <h3>Machine Learning</h3>
-      <div class="module-meta"><span class="chip">S5</span><span class="chip violet">5 ECTS</span></div>
-      <div class="module-bar"><span style="width:35%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s5">
-      <div class="module-top">
-        <span class="module-code mono">SYD503</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Distributed Systems</h3>
-      <div class="module-meta"><span class="chip">S5</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:30%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s5">
-      <div class="module-top">
-        <span class="module-code mono">GLO504</span>
-        <span class="chip">CM+TP</span>
-      </div>
-      <h3>Software Engineering &amp; UML</h3>
-      <div class="module-meta"><span class="chip">S5</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:45%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s6">
-      <div class="module-top">
-        <span class="module-code mono">DL601</span>
-        <span class="chip">CM+TP</span>
-      </div>
-      <h3>Deep Learning &amp; Neural Networks</h3>
-      <div class="module-meta"><span class="chip">S6</span><span class="chip violet">5 ECTS</span></div>
-      <div class="module-bar"><span style="width:20%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s6">
-      <div class="module-top">
-        <span class="module-code mono">NLP602</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Natural Language Processing</h3>
-      <div class="module-meta"><span class="chip">S6</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:18%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s6">
-      <div class="module-top">
-        <span class="module-code mono">VIS603</span>
-        <span class="chip">CM+TP</span>
-      </div>
-      <h3>Computer Vision</h3>
-      <div class="module-meta"><span class="chip">S6</span><span class="chip violet">4 ECTS</span></div>
-      <div class="module-bar"><span style="width:15%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s6">
-      <div class="module-top">
-        <span class="module-code mono">CLD604</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Cloud Computing &amp; MLOps</h3>
-      <div class="module-meta"><span class="chip">S6</span><span class="chip violet">3 ECTS</span></div>
-      <div class="module-bar"><span style="width:10%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s6">
-      <div class="module-top">
-        <span class="module-code mono">SEC605</span>
-        <span class="chip">CM+TD</span>
-      </div>
-      <h3>Cybersecurity Fundamentals</h3>
-      <div class="module-meta"><span class="chip">S6</span><span class="chip violet">3 ECTS</span></div>
-      <div class="module-bar"><span style="width:12%"></span></div>
-      <div class="module-foot"><span>14 weeks</span><a href="#">Resources ↗</a></div>
-    </article>
-
-    <article class="panel module-card tilt" data-filter-tags="s6">
-      <div class="module-top">
-        <span class="module-code mono">PFE606</span>
-        <span class="chip warn">PROJECT</span>
-      </div>
-      <h3>End-of-Studies Project (PFE)</h3>
-      <div class="module-meta"><span class="chip">S6</span><span class="chip violet">6 ECTS</span></div>
-      <div class="module-bar"><span style="width:5%"></span></div>
-      <div class="module-foot"><span>Ongoing</span><a href="#">Resources ↗</a></div>
-    </article>
-
-  </div>
-
-  <div class="section-title" id="tools">
-    <h2>AI &amp; Developer Toolkit</h2>
-    <span class="idx mono">// PANEL 03 SHORTCUTS</span>
-  </div>
-  <p style="max-width:640px; margin-bottom: 8px;">Free, browser-based tools that cover most of what this program will ask you to run — no local install or paid tier required.</p>
-
-  <div class="tool-grid">
-    <a class="panel tool-card" href="https://colab.research.google.com" target="_blank" rel="noopener">
-      <span class="t-name">Google Colab</span>
-      <p class="t-desc">Free GPU notebooks for ML &amp; DL practicals.</p>
-    </a>
-    <a class="panel tool-card" href="https://huggingface.co" target="_blank" rel="noopener">
-      <span class="t-name">Hugging Face</span>
-      <p class="t-desc">Pretrained models &amp; datasets for NLP/CV projects.</p>
-    </a>
-    <a class="panel tool-card" href="https://www.kaggle.com" target="_blank" rel="noopener">
-      <span class="t-name">Kaggle</span>
-      <p class="t-desc">Datasets, notebooks and ML competitions.</p>
-    </a>
-    <a class="panel tool-card" href="https://github.com/education/students" target="_blank" rel="noopener">
-      <span class="t-name">GitHub Student Pack</span>
-      <p class="t-desc">Free dev tools, hosting credits and Copilot.</p>
-    </a>
-    <a class="panel tool-card" href="https://www.overleaf.com" target="_blank" rel="noopener">
-      <span class="t-name">Overleaf</span>
-      <p class="t-desc">LaTeX editor for reports and the PFE memoir.</p>
-    </a>
-    <a class="panel tool-card" href="https://scikit-learn.org" target="_blank" rel="noopener">
-      <span class="t-name">scikit-learn Docs</span>
-      <p class="t-desc">Reference for the ML501/ML502 practicals.</p>
-    </a>
-    <a class="panel tool-card" href="https://pytorch.org" target="_blank" rel="noopener">
-      <span class="t-name">PyTorch</span>
-      <p class="t-desc">Deep learning framework used in DL601.</p>
-    </a>
-    <a class="panel tool-card" href="https://pages.github.com" target="_blank" rel="noopener">
-      <span class="t-name">GitHub Pages</span>
-      <p class="t-desc">Host your projects free — like this dashboard.</p>
-    </a>
-  </div>
-
-</main>
-
- -->
-
-
-
-<footer>
-  <div class="wrap">
-    <span class="fine">FSDM_AI // STUDENT — Plateforme étudiante indépendante, non affiliée à l'administration officielle de la faculté.</span>
-    <span class="fine">Fès, Morocco</span>
-  </div>
-</footer>
-
-
-<script src="script.js"></script>
+      window.addEventListener('scroll', () => {
+        let current = sections[0]?.id;
+        sections.forEach(section => {
+          if (window.scrollY >= section.offsetTop - 130) current = section.id;
+        });
+        if (current) setActive(current);
+      });
+    })();
+  </script>
 </body>
+
 </html>
