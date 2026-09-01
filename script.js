@@ -330,7 +330,7 @@ const LANG = {
   en: {
     "HOME":"HOME","MODULES":"MODULES","SCHEDULE":"SCHEDULE","ANNOUNCEMENTS":"ANNOUNCEMENTS",
     "Semestre 5 — Group A":"Semester 5 — Group A","Schedule":"Schedule",
-    "Announcements":"Announcements","Course index":"Course index","Modules & Resources":"Modules & Resources",
+    "Announcements":"Announcements","Course index":"Course index","Modules":"Modules ",
     "WEEKLY TIMETABLE":"DAILY SCHEDULE","DAILY SCHEDULE":"DAILY SCHEDULE",
     "ALL":"ALL","Semesters tracked":"Semesters tracked","Modules indexed":"Modules indexed",
     "Tool shortcuts":"Tool shortcuts","Academic year":"Academic year",
@@ -371,10 +371,11 @@ const LANG = {
     "p5-desc": "Lien externe ↗",
     "p5-link": "Visiter l'espace →"
   },
+  
   ar: {
     "HOME":"الرئيسية","MODULES":"الوحدات","SCHEDULE":"الجدول","ANNOUNCEMENTS":"الإعلانات",
     "Semestre 5 — Group A":"السداسي 5 — المجموعة A","Schedule":"الجدول",
-    "Announcements":"الإعلانات","Course index":"فهرس المقررات","Modules & Resources":"الوحدات والموارد",
+    "Announcements":"الإعلانات","Course index":"فهرس المقررات","Modules ":"الوحدات ",
     "WEEKLY TIMETABLE":"الجدول اليومي","DAILY SCHEDULE":"الجدول اليومي",
     "ALL":"الكل","Semesters tracked":"الفصول الدراسية","Modules indexed":"الوحدات",
     "Tool shortcuts":"اختصارات الأدوات","Academic year":"السنة الجامعية",
