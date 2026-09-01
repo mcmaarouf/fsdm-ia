@@ -502,15 +502,23 @@ footer .fine {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin: 28px 0 26px;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 28px auto 26px;
+  padding: 8px;
+  border: var(--edge);
+  border-radius: 999px;
+  background: var(--glass);
+  backdrop-filter: blur(16px) saturate(140%);
 }
 .filter-btn {
   font-family: var(--f-mono);
-  font-size: 12px;
-  padding: 9px 15px;
+  font-size: 13px;
+  padding: 11px 22px;
   border-radius: 999px;
   border: var(--edge);
-  background: var(--glass);
+  background: transparent;
   color: var(--ink-1);
   cursor: pointer;
   transition: all 0.2s;
@@ -547,9 +555,32 @@ footer .fine {
   height: 4px; border-radius: 4px; background: rgba(255,255,255,0.06); overflow: hidden; margin-top: 4px;
 }
 .module-bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--signal), var(--synapse)); }
-.module-foot { display: flex; justify-content: space-between; align-items: center; font-size: 11.5px; font-family: var(--f-mono); color: var(--ink-2); margin-top: 4px;}
-.module-foot a { color: var(--signal); text-decoration: none; }
-.module-foot a:hover { text-decoration: underline; }
+.module-foot { display: flex; gap: 8px; font-size: 11.5px; font-family: var(--f-mono); color: var(--ink-2); margin-top: 4px;}
+.module-foot a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.module-foot a:hover { text-decoration: none; transform: translateY(-1px); }
+.module-foot a.drive-link {
+  color: #5fd48a;
+  background: rgba(52, 168, 83, 0.10);
+  border-color: rgba(52, 168, 83, 0.32);
+}
+.module-foot a.drive-link:hover { background: rgba(52, 168, 83, 0.18); border-color: rgba(52, 168, 83, 0.55); }
+.module-foot a.youtube-link {
+  color: #ff5c5c;
+  background: rgba(255, 0, 0, 0.10);
+  border-color: rgba(255, 0, 0, 0.32);
+}
+.module-foot a.youtube-link:hover { background: rgba(255, 0, 0, 0.18); border-color: rgba(255, 0, 0, 0.55); }
 
 .section-title {
   display: flex; align-items: baseline; gap: 12px; margin: 54px 0 20px;
@@ -896,6 +927,12 @@ a:focus-visible, button:focus-visible {
 html[dir="rtl"] .hud-inner,html[dir="rtl"] .page-head,html[dir="rtl"] .hero,html[dir="rtl"] .daily-toolbar,html[dir="rtl"] .daily-item{direction:rtl}
 @media(max-width:700px){.lang-switcher{order:2}.hud-inner{gap:8px}}
 
+/* ==========================================================================
+   MODULES page — semester quick-nav pills (anchors) + icon accent
+   ========================================================================== */
+.filter-row a.filter-btn { text-decoration: none; display: inline-flex; align-items: center; }
+.module-card .icon-slot { color: var(--signal); font-size: 16px; }
+section[id] { scroll-margin-top: 84px; }
 
 
 
@@ -906,57 +943,10 @@ html[dir="rtl"] .hud-inner,html[dir="rtl"] .page-head,html[dir="rtl"] .hero,html
 
 
 
-
-/* Container الإعلانات */
-#announcements-container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 25px;
-}
-
-/* تصميم كارت الإعلان */
-.announcement-card {
-  background: rgba(84, 118, 144, 0.453);
-  border-radius: 10px;
-  padding: 16px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 4px solid var(--badge-color, #a0e1ff);
-  backdrop-filter: blur(8px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-.announcement-card:hover {
-  transform: translateX(4px);
-  background: rgba(22, 27, 34, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* ألوان الأقسام */
-.announcement-card.category-EXAM { --badge-color: #ff5555; }
-.announcement-card.category-TD   { --badge-color: #00f2fe; }
-.announcement-card.category-INFO { --badge-color: #8b7bff; }
-
-.announcement-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.announcement-badge {
-  font-family: monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 2px 8px;
-  border-radius: 4px;
-  color: var(--badge-color, #a0e1ff);
-  background: rgba(255, 255, 255, 0.145);
-  border: 1px solid var(--badge-color, #a0e1ff);
-}
-
-.announcement-date {
-  font-family: monospace;
-  font-size: 0.78rem;
-  color: #8b949e;
+.semester-panel {
+  border: 1px solid rgba(235, 171, 9, 0.874);
+  border-radius: 18px;
+  background: rgba(47, 46, 46, 0.13);
+  padding: 24px;
+  margin-bottom: 20px;
 }
