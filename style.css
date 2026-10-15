@@ -46,7 +46,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--bg-0);
+  background: #000000;
   color: var(--ink-0);
   font-family: var(--f-body);
   min-height: 100vh;
