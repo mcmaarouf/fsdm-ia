@@ -347,7 +347,10 @@ const LANG = {
     "lab-status": "Status",
     "p5-title": "Maarouf Space",
     "p5-desc": "External Link ↗",
-    "p5-link": "View Space →"
+    "p5-link": "View Space →",
+
+   "New: Semester 3 modules are now available!":"New: Semester 3 modules are now available!",
+    "View S3 modules →":"View S3 modules →",
   },
   fr: {
     "HOME":"ACCUEIL","MODULES":"MODULES","SCHEDULE":"EMPLOI DU TEMPS","ANNOUNCEMENTS":"ANNONCES",
@@ -369,7 +372,9 @@ const LANG = {
     "lab-status": "Statut",
     "p5-title": "Maarouf Space",
     "p5-desc": "Lien externe ↗",
-    "p5-link": "Visiter l'espace →"
+    "p5-link": "Visiter l'espace →",
+      "New: Semester 3 modules are now available!":"Nouveau : les modules du Semestre 3 sont disponibles !",
+    "View S3 modules →":"Voir les modules S3 →",
   },
   
   ar: {
@@ -391,7 +396,9 @@ const LANG = {
     "lab-status": "الحالة",
     "p5-title": "Maarouf Space",
     "p5-desc": "↗",
-    "p5-link": "زيارة الفضاء ←"
+    "p5-link": "زيارة الفضاء ←",
+   "New: Semester 3 modules are now available!":"جديد: وحدات السداسي 3 متوفرة الآن!",
+    "View S3 modules →":"عرض وحدات S3 ←",
   }
 };
 
